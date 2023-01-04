@@ -1,7 +1,7 @@
 /* -- Fonts -- */
  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /* -- Root Variables --*/
-:root {
+:root { 
 
     /* -- Colors -- */
     --color-danger:#ff7782;
@@ -30,13 +30,14 @@
     --box-shadow:0 2rem 3rem var(--color-light);
 
     /* -- Police --*/
-    --text-descr0:18px;
     --text-descr1:16px;
     --text-descr2:14px;
-    --titre0:64px;
-    --titre1:32px;
-    --titre2:24px;    
-    --titre3:20px;
+    --text-descr3:12px;
+
+    --titre0:50px;
+    --titre1:24px;
+    --titre2:20px;    
+    --titre3:18px;
 }
 *{
     margin: 0;
@@ -67,7 +68,7 @@ body{
     height: 40px;
     background-color: var(--color-primary-variant);
     color: var(--color-white);
-    font-size: var(--text-descr1);
+    font-size: var(--text-descr2);
     padding: 10px;
     border-radius: var(--border-radius-1);
 }
@@ -84,6 +85,7 @@ body{
     position: relative;
     width: 100px;
     height: 3px;
+    top: 2px;
     background-color: var(--color-dark);
 }
 
@@ -93,73 +95,68 @@ body{
 
 .banniere{
     position: relative;
-    width: 100%;    
+    width: 100%; 
+    overflow: hidden;   
 } 
 
 /* ################################# */
 /* heures d'ouverture et conctacts  */
 /* ################################# */
 
-.banniere .h-contact{
+.h-contact{
     position: relative;
     width: 100%;
     height: 40px;
-    padding: 5px 0;
     overflow: hidden;
+    padding: 10px 0;
     background-color: var(--color-primary-variant);
 }
-
 .h-contact .content{
-    position: relative;
-    width: 100%;
-    height: 30px;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 5fr 400px 60px ;
+    grid-gap:10px;
     overflow: hidden;
 }
-
-.h-contact .content .col,
-.h-contact .content .col .part{
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-.h-contact .content .col .part{
-    border-right: 3px solid var(--color-white);
-    margin-right: 10px;
-}
-.h-contact .content .col .icon{
+.h-contact .content .heures{
+    position: relative;
     display: flex;
 }
-.h-contact .content .col .icon i{
-    height: 20px;
-    width: 20px;
+.h-contact .icon{
+    font-size: var(--titre3);
     color: var(--color-white);
     margin-right: 10px;
-    align-items: center;
-}
+} 
+.h-contact .content  p,
+.h-contact .content  p a{
+    position: relative;
+    font-size: var(--text-descr3);
+    color: var(--color-white);
+    top: 5px;
 
-.h-contact .content .col .social {
-    width: 70px;
+
+}.h-contact .content  p a{
+    top: -1px;
+}
+.h-contact .content .contact{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:10px    
+}
+.h-contact .content .contact .col1{
+    border-right: var(--color-white) solid 3px;
+    padding-right: 10px;
+}
+.h-contact .content .contact .col,
+.h-contact .content .contact .col1{
+    position: relative;
     display: flex;
-    justify-content: space-around;
+}
+.h-contact .content .social{
+    display: flex;
+    justify-content: space-between;
 }
 
-.h-contact .content .col .social i{
-    height: 20px;
-    width: 20px;
-    color: var(--color-white);
-    align-items: center;
-    
-}
-.h-contact .content .col p,
-.h-contact .content .col .part p,
-.h-contact .content .col .part p a{ 
-    font-size: var(--text-descr2);
-    color: var(--color-white);
-    font-weight: 500;
-}
 
 /* responsive design*/
 
@@ -204,9 +201,9 @@ body{
     justify-content: space-between;
     
 }
-.menu .content .lien ul li{
+.menu .content .lien ul li a{
     font-size: var(--titre3);
-    /*color: var(--color-primary-variant);*/
+    color: var(--color-primary-variant);
     font-weight: 600;
 }
 
@@ -241,17 +238,21 @@ body{
 }
 .img-banniere .content {
     position: absolute;
-    top: 20%;
-    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
 }
 .img-banniere .content h2, .img-banniere .content h1{
     color: var(--color-white);
-    margin: 30px 0;
     text-align: center;
 }
 .img-banniere .content h2{
+    margin: 30px 0;
+}
+.img-banniere .content h2{
     font-size: var(--titre1);
-    font-weight: 500;
+    font-weight: 700;
 }
 .img-banniere .content h1{
     font-size: var(--titre0);
@@ -266,15 +267,15 @@ body{
 /* ################################# */
 .u-chiffre{
     position: relative;
-    max-width: 1100px;
-    height: 150px;
+    max-width: 1000px;
+    height: 120px;
     z-index: 1;
-    top: -75px;
-    padding: 20px;
+    top: -60px;
+    padding: 0 35px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-primary-variant);
-    border-radius: var(--border-radius-1) ;
+    border-radius: var(--border-radius-2) ;
     align-items: center;
     margin: auto;
 }
@@ -286,27 +287,29 @@ body{
 .u-chiffre .col .icon{
     position: relative;
     margin-right: 15px;
+    top: 7px;
 }
 .u-chiffre .col .icon i{
     color: var(--color-white);
-    font-size: 40px;
+    font-size: 35px;
     right: 15px;
     text-align: center;
-    margin-top: 20px;
+}
+.u-chiffre .col .info{
+    position: relative;
+    top: -5px;
 }
 .u-chiffre .col .info h2,
 .u-chiffre .col .info p{
     color: var(--color-white);
 }
 .u-chiffre .col .info h2{
-    position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-weight: 700;
     font-size: var(--titre1);
 }
 .u-chiffre .col .info p{
-    font-size: var(--titre3);
-    font-weight: 100;
+    font-size: var(--text-descr2);
 }
 /* responsive design*/
 
@@ -345,14 +348,14 @@ body{
     overflow: hidden;
 }
 .apropos .info h3{
-    color: var(--color-primary);
-    font-size: var(--titre3);
+    color: var(--color-primary-variant);
+    font-size: var(--titre2);
     margin-bottom: 50px;
     font-weight: 600;
 }
 .apropos .info p{
     color: var(--color-dark);
-    font-size: var(--text-descr0);
+    font-size: var(--text-descr1);
     margin-bottom: 60px;
 }
 /* responsive design*/
@@ -401,12 +404,14 @@ body{
     overflow: hidden;
     margin-bottom: 50px;
 }
-.services .desc p{
-    font-size: var(--titre3) ;
+.services .desc p {
+    font-size: var(--titre2);
     color: var(--color-dark);
     text-align: center;
-    margin-bottom: 10                                                                                                                       0px;
+    margin-bottom: 100px;
 }
+    
+
 .services .content {
     position: relative;
     width: 100%;
@@ -416,3 +421,54 @@ body{
     overflow: hidden;
     bottom: 30px;
 }
+.services .content .col{
+    position: relative;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    width: 380px;
+    height: 180px;
+    border-radius: var(--border-radius-2);
+    margin-bottom: 20px;
+    padding: 20px
+}  
+.services .content .col .img-service{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+    overflow: hidden;
+}   
+.services .content .col .img-service img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}  
+.services .content .col .info{
+    position: relative;
+    overflow: hidden;
+}  
+.services .content .col .info h3,
+.services .content .col .info p{
+    color: var(--color-dark);
+    margin-bottom: 20px;
+} 
+.services .content .col .info h3{
+    font-size: var(--titre3);
+}
+.services .content .col .info p{
+    font-size: var(--text-descr2);
+}   
+.services .content .col .info a{
+    color: var(--color-primary-variant);
+    margin-bottom: 20px;
+    font-size: var(--titre3);
+} 
+.services .btn-position{
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px
+}                                                                                                         0px;
