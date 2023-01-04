@@ -1,0 +1,418 @@
+/* -- Fonts -- */
+ @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* -- Root Variables --*/
+:root {
+
+    /* -- Colors -- */
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#000000;
+    --color-light:rgba(132,139,200,0.18);
+    --color-primary-variant:#2257BF;
+    --color-dark-variant:#677483;
+    --color-background:#F6F6F9;
+
+    /* -- border radius -- */
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    /* -- padding -- */
+    --card-padding:1.8rem;
+    --padding:1.2rem;
+
+    /* -- box shadow -- */
+    --box-shadow:0 2rem 3rem var(--color-light);
+
+    /* -- Police --*/
+    --text-descr0:18px;
+    --text-descr1:16px;
+    --text-descr2:14px;
+    --titre0:64px;
+    --titre1:32px;
+    --titre2:24px;    
+    --titre3:20px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: inter, sans-serif;
+}
+
+body{
+    max-width: 1440px;
+    margin: auto;
+    background-color: var(--color-background);
+}
+.main{
+    max-width: calc(100% - 100px);
+    padding: 0 3px;
+    margin:auto;
+    /* border: #f6f6f9 1px solid; */
+} 
+.btn-xl{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    background-color: var(--color-primary-variant);
+    color: var(--color-white);
+    font-size: var(--text-descr1);
+    padding: 10px;
+    border-radius: var(--border-radius-1);
+}
+.titre{
+    position: relative;
+    margin-bottom: 50px;
+    left: 40%;
+}
+.titre p{
+    color: var(--color-dark);
+    font-size: var(--titre1);
+}
+.titre .trait{
+    position: relative;
+    width: 100px;
+    height: 3px;
+    background-color: var(--color-dark);
+}
+
+/* ################################# */
+/* banniere */
+/* ################################# */
+
+.banniere{
+    position: relative;
+    width: 100%;    
+} 
+
+/* ################################# */
+/* heures d'ouverture et conctacts  */
+/* ################################# */
+
+.banniere .h-contact{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding: 5px 0;
+    overflow: hidden;
+    background-color: var(--color-primary-variant);
+}
+
+.h-contact .content{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    overflow: hidden;
+}
+
+.h-contact .content .col,
+.h-contact .content .col .part{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.h-contact .content .col .part{
+    border-right: 3px solid var(--color-white);
+    margin-right: 10px;
+}
+.h-contact .content .col .icon{
+    display: flex;
+}
+.h-contact .content .col .icon i{
+    height: 20px;
+    width: 20px;
+    color: var(--color-white);
+    margin-right: 10px;
+    align-items: center;
+}
+
+.h-contact .content .col .social {
+    width: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.h-contact .content .col .social i{
+    height: 20px;
+    width: 20px;
+    color: var(--color-white);
+    align-items: center;
+    
+}
+.h-contact .content .col p,
+.h-contact .content .col .part p,
+.h-contact .content .col .part p a{ 
+    font-size: var(--text-descr2);
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+/* responsive design*/
+
+
+/* ################################# */
+/* Menu  */
+/* ################################# */
+
+.menu{
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.menu .content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.menu .content .logo{
+    position: relative;
+    height: 70px;
+    width: 108px;
+    background-color:var(--color-primary-variant);
+    overflow: hidden;
+}
+.menu .content .logo img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.menu .content .lien{
+    width: 600px;
+    align-self: center;
+} 
+.menu .content .lien ul{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.menu .content .lien ul li{
+    font-size: var(--titre3);
+    /*color: var(--color-primary-variant);*/
+    font-weight: 600;
+}
+
+
+/* responsive design*/
+
+
+/* ################################# */
+/* image banniere  */
+/* ################################# */
+
+.img-banniere{
+    position: relative;
+}
+.img-banniere .img-ban{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-dark);
+
+}
+
+.img-banniere .img-ban img{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.3;
+}
+.img-banniere .content {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+.img-banniere .content h2, .img-banniere .content h1{
+    color: var(--color-white);
+    margin: 30px 0;
+    text-align: center;
+}
+.img-banniere .content h2{
+    font-size: var(--titre1);
+    font-weight: 500;
+}
+.img-banniere .content h1{
+    font-size: var(--titre0);
+    font-weight: 700;
+}
+
+/* responsive design*/
+
+
+/* ################################# */
+/* Uptime en chiffre  */
+/* ################################# */
+.u-chiffre{
+    position: relative;
+    max-width: 1100px;
+    height: 150px;
+    z-index: 1;
+    top: -75px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-primary-variant);
+    border-radius: var(--border-radius-1) ;
+    align-items: center;
+    margin: auto;
+}
+.u-chiffre .col{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.u-chiffre .col .icon{
+    position: relative;
+    margin-right: 15px;
+}
+.u-chiffre .col .icon i{
+    color: var(--color-white);
+    font-size: 40px;
+    right: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+.u-chiffre .col .info h2,
+.u-chiffre .col .info p{
+    color: var(--color-white);
+}
+.u-chiffre .col .info h2{
+    position: relative;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: var(--titre1);
+}
+.u-chiffre .col .info p{
+    font-size: var(--titre3);
+    font-weight: 100;
+}
+/* responsive design*/
+
+
+/* ################################# */
+/* Apropos de nous  */
+/* ################################# */
+.apropos{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.apropos .content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap:40px;
+}
+.apropos .content .img-apropos{
+    position: relative;
+    width: 350px;
+    height: 400px;
+    overflow: hidden;
+}
+.apropos .content .img-apropos img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.apropos .info {
+    width: 100%;
+    overflow: hidden;
+}
+.apropos .info h3{
+    color: var(--color-primary);
+    font-size: var(--titre3);
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+.apropos .info p{
+    color: var(--color-dark);
+    font-size: var(--text-descr0);
+    margin-bottom: 60px;
+}
+/* responsive design*/
+
+
+/* ################################# */
+/* Nos Partenaires  */
+/* ################################# */
+
+.partenaire{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-color: var(--color-white);
+    overflow: hidden;
+    padding: 25px 0;
+    margin-bottom: 50px;
+}
+.partenaire .content{    
+    display: flex;
+    justify-content: space-between;
+}
+.partenaire .log-part{
+    position: relative;
+    height: 70px;
+    width: 120px;
+    overflow: hidden;
+}
+.partenaire .log-part img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+}
+/* responsive design*/
+
+
+/* ################################# */
+/* Nos Services  */
+/* ################################# */
+.services{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.services .desc p{
+    font-size: var(--titre3) ;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: 10                                                                                                                       0px;
+}
+.services .content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    overflow: hidden;
+    bottom: 30px;
+}
