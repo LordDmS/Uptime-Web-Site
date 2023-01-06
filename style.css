@@ -27,7 +27,7 @@
     --padding:1.2rem;
 
     /* -- box shadow -- */
-    --box-shadow:0 2rem 3rem var(--color-light);
+    --box-shadow:0 0.2rem 0.3rem var(--color-dark-variant);
 
     /* -- Police --*/
     --text-descr1:16px;
@@ -57,6 +57,7 @@ body{
     max-width: 1440px;
     margin: auto;
     background-color: var(--color-background);
+    overflow-x: hidden;
 }
 .main{
     max-width: calc(100% - 100px);
@@ -336,6 +337,7 @@ body{
     width: 350px;
     height: 400px;
     overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 .apropos .content .img-apropos img{
     position: absolute;
@@ -375,6 +377,7 @@ body{
     overflow: hidden;
     padding: 25px 0;
     margin-bottom: 100px;
+    box-shadow: var(--box-shadow);
 }
 .partenaire .content{    
     display: flex;
@@ -432,7 +435,8 @@ body{
     min-height: 180px;
     border-radius: var(--border-radius-2);
     margin-bottom: 20px;
-    padding: 20px
+    padding: 20px;
+    box-shadow: var(--box-shadow);
 }  
 .services .content .col .img-service{
     position: relative;
@@ -469,7 +473,7 @@ body{
     margin-bottom: 20px;
     font-size: var(--titre3);
 } 
-.services .btn-position{
+.btn-position{
     position: relative;
     text-align: center;
     margin-bottom: 10px
@@ -541,13 +545,13 @@ body{
     width: 100%;
     height: 670px;
     overflow: hidden;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 .choisir .content{
     position: relative;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    width: 90%;
+    max-width: 1050px;
     margin: auto;
 }
 .choisir .content .choix-img{
@@ -565,17 +569,46 @@ body{
 .choisir .choix-img .client-sati{
     position: relative;
     z-index: 1;
-    min-height: 150px;
-    max-width: 280px;
+    min-height: 120px;
+    max-width: 250px;
     overflow: hidden;
-    top: -15%;
+    top: -10%;
     left: 5%;
 }
 .choisir .choix-img .client-sati .content{
     z-index: 2;
     width: 100%;
-    height: 110px;
+    height: 90px;
+    display: flex;
     background-color: var(--color-white);
+    padding: 15px;
+    border-radius: var(--border-radius-2);
+}
+.choisir .choix-img .client-sati .content .icon{
+    font-size: var(--titre0);
+    color: var(--color-primary-variant);
+}
+.choisir .choix-img .client-sati .content .info{
+    margin-left: 8%;
+}
+.choisir .choix-img .client-sati .content .info h4{
+    font-size: var(--titre1);
+    margin-bottom: 8px;
+    color: var(--color-primary-variant);
+}
+.choisir .choix-img .client-sati .content .info p{
+    font-size: var(--text-descr2);
+    color: var(--color-dark);
+}
+.choisir .choix-img .client-sati .triangle{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent var(--color-white);
+    rotate: 90deg;
+    left: 30px;
 }
 
 .choisir .content .choix{
@@ -585,6 +618,7 @@ body{
     background-color: var(--color-white);
     padding: 30px;
     border-bottom: solid 20px var(--color-primary-variant);
+    box-shadow: var(--box-shadow);
 }
 .choisir .content .choix .titre{
     left: 0;
@@ -642,3 +676,75 @@ body{
     margin-left: 30px;
     font-size: var(--text-descr2);
 }
+/* responsive design*/
+
+
+/* ################################# */
+/* Nos Realisations  */
+/* ################################# */ 
+.realisation{
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+} 
+.realisation .content{
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:40px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+.realisation .content .col{
+    position: relative;
+    overflow: hidden;
+    max-width:250px ;
+    min-height:320px ;
+    margin-bottom: 20px;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+}
+
+.realisation .content .col .real-img{
+    position: relative;
+    max-width: 250px;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.realisation .content .col .real-img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.realisation .content .col .r-date{
+    font-size: var(--text-descr3);
+    color: var(--color-dark);
+    margin: 10px 0 10px  0;
+}
+
+.realisation .content .col .info h3 {
+    font-size: var(--text-descr1);
+    color: var(--color-primary-variant);
+    margin-bottom: 10px;
+}
+.realisation .content .col .info p{
+    font-size: var(--text-descr3);
+    color: var(--color-dark);
+}
+/* responsive design*/
+
+
+/* ################################# */
+/* pourquoi nous choisir  */
+/* ################################# */  
+
