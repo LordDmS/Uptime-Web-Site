@@ -15,7 +15,7 @@
     --color-dark:#000000;
     --color-light:rgba(132,139,200,0.18);
     --color-primary-variant:#2257BF;
-    --color-dark-variant:#f3efefce;
+    --color-dark-variant:#7a7a7ace;
     --color-background:#f6f6f9;
 
     /* -- border radius -- */
@@ -43,6 +43,7 @@
     --titre3:18px;
     --titre4:32px;
     --titre5:40px;
+    --titre6:28px;
 }
 *{
     margin: 0;
@@ -64,36 +65,115 @@ body{
 }
 .main{
     position: relative;
-    max-width: calc(100% - 100px);
+    max-width: calc(100% - 10%);
     padding: 0 3px;
     margin:auto;
     /* border: #f6f6f9 1px solid; */
 } 
 .btn-xl{
     position: relative;
-    width: 150px;
-    height: 40px;
     background-color: var(--color-primary-variant);
     color: var(--color-white);
     font-size: var(--text-descr2);
-    padding: 10px;
+    padding: 10px 25px;
     border-radius: var(--border-radius-1);
 }
-.titre{
+.titre,
+.titre-left{
     position: relative;
+    width: 100%;
     margin-bottom: 50px;
-    left: 40%;
+    display: flex;
 }
+.titre{
+    justify-content: center;
+}
+.titre-left p,
 .titre p{
     color: var(--color-dark);
     font-size: var(--titre1);
 }
-.titre .trait{
+
+/* ################################# */
+/* Modal */
+/* ################################# */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--color-opacite); /* Fallback color */
+    background-color:var(--color-opacite-light); /* Black w/ opacity */
+    backdrop-filter: blur(8px);    
+  }
+  
+  /* Modal Content */
+  .modal-content {
     position: relative;
-    width: 100px;
-    height: 3px;
-    top: 2px;
-    background-color: var(--color-dark);
+    background-color: var(--color-background);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--color-info-dark);
+    width: 80%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: var(--color-white);
+    float: right;
+    font-size: var(--titre1);
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: var(--color-dark);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.modal-header {
+    padding: 10px 20px;
+    background-color: var(--color-primary-variant);
+    color: var(--color-white);
+  }
+  
+.modal-body {
+    position: relative;
+    margin: 25px 0;
+    padding: 2px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body ul li{
+    margin: 25px 0;
+}
+
+.modal-body ul li a{
+    color: var(--color-primary-variant);
+    font-size: var(--titre2);
+    font-weight: 700;
 }
 
 /* ################################# */
@@ -104,84 +184,7 @@ body{
     position: relative;
     width: 100%; 
     overflow: hidden;  
-    display: flex; 
-    justify-content: space-between;
 } 
-
-.ban{
-    position: relative;
-    width: 100%;
-}
-/* ################################# */
-/* menu lateral  */
-/* ################################# */
-
-.menu-lateral{
-    width: 80%;
-    height: 100vh;    
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: 11;
-    background: var(--color-primary-variant);
-    padding: 20px;
-    display: none;
-}
-.menu-lateral .entete{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-}
-.menu-lateral .entete .logo{
-    position: relative;
-    width: 100px;
-    height: 45px;
-    overflow: hidden;
-}
-.menu-lateral .entete .logo img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: contain;
-}
-
-.menu-lateral .entete .fermer{
-    font-size: var(--titre5);
-    color: var(--color-white);
-    cursor: pointer;
-}
-
-.menu-lateral .liens{
-    width: 100%;
-    height: 700px;
-    display: flex;
-    justify-content: center;
-}
-.menu-lateral .liens ul li {
-    margin: 30px 0;
-    color: var(--color-white);
-}
-.menu-lateral .liens ul li a{
-    color: var(--color-white);
-    font-size: var(--titre2);
-}
-
-/* responsive design*/
-
-@media screen and (max-width: 900px) {
-    .banniere.mobile-menu .ban{
-        filter: blur(8px);
-    }
-
-    .banniere.mobile-menu .menu-lateral{
-        display: block;
-    }
-}
 
 /* ################################# */
 /* heures d'ouverture et conctacts  */
@@ -368,7 +371,7 @@ body{
 .img-banniere .content {
     width: 80%;
     height: 80%;
-    padding-top: 5%;
+    padding-top: 8%;
     margin: auto;
     overflow: hidden;
 }
@@ -383,25 +386,43 @@ body{
     margin: 30px 0;
 }
 .img-banniere .content h1{
-    font-size: var(--titre0);
+    font-size: var(--titre5);
     font-weight: 700;
 }
 
 /* responsive design*/
 
-@media screen and(max-width: 675px) {
-    
-    
-    .img-banniere .content h1{
-        font-size: var(--titre0);
-        font-weight: 700;
+@media screen and (max-width: 675px) {
+       
+    .img-banniere .content {
+        width: 90%;
+        height: 80%;
+        padding-top: 20%;
     }
     .img-banniere .content h2{
-        margin: 20px 0;
-        font-size: var(--titre3);
-    }
-
-
+        font-size: var(--titre2);
+        font-weight: 700;
+    }    
+    .img-banniere .content h1{
+        font-size: var(--titre4);
+        font-weight: 700;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+}
+@media screen and (max-width: 300px) {
+       
+    .img-banniere .content h2{
+        display: none;
+    }    
+    .img-banniere .content h1{
+        font-size: var(--titre1);
+        font-weight: 700;
+    }   
+    .img-banniere .content {
+        padding-top: 35%;
+    }   
+    .img-banniere .img-ban{
+        height: 300px;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 }
 
 /* ################################# */
@@ -410,11 +431,12 @@ body{
 .u-chiffre{
     position: relative;
     max-width: 1000px;
-    height: 120px;
+    min-height: 120px;
     z-index: 1;
     top: -60px;
     padding: 0 35px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: var(--color-primary-variant);
     border-radius: var(--border-radius-2) ;
@@ -425,6 +447,7 @@ body{
     position: relative;
     display: flex;
     justify-content: space-between;
+    margin: 20px 0;
 }
 .u-chiffre .col .icon{
     position: relative;
@@ -456,19 +479,14 @@ body{
 
 /* responsive design*/
 
-@media screen and(max-width: 675px) {
-    
-    
-    .img-banniere .content h1{
-        font-size: var(--titre0);
-        font-weight: 700;
-    }
-    .img-banniere .content h2{
-        margin: 20px 0;
-        font-size: var(--titre3);
-    }
-
-
+@media screen and (max-width: 813px) {
+   
+    .u-chiffre{
+        top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-around;
+    }  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 }
 
 /* ################################# */
@@ -483,8 +501,14 @@ body{
 .apropos .content{
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 3fr 2fr;
     grid-gap:40px;
+}
+.apropos .content .image{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
 }
 .apropos .content .img-apropos{
     position: relative;
@@ -502,8 +526,9 @@ body{
     object-fit: cover;
 }
 .apropos .info {
+    position: relative;
     width: 100%;
-    overflow: hidden;
+    height: 350px;
 }
 .apropos .info h3{
     color: var(--color-primary-variant);
@@ -518,6 +543,56 @@ body{
 }
 /* responsive design*/
 
+@media screen and (max-width: 985px) {
+   
+    .apropos .content{
+        grid-template-columns: 1fr;
+    }
+    .apropos .content .info{
+        min-height: max-content;
+    }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+}
+
+@media screen and (max-width: 700px){
+
+    .apropos .content .img-apropos{
+        height: 300px;
+    } 
+}
+
+@media screen and (max-width: 500px) {   
+    .apropos .content .image{
+        display: none;
+    }  
+    .apropos .info h3{
+        font-size: var(--text-descr1);
+    }
+    .apropos .info p{
+        font-size: var(--text-descr3);
+    } 
+    .apropos .info {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+}
+
+@media screen and (max-width: 350px) {   
+    
+    .apropos .info h3{
+        font-size: var(--text-descr2);
+    }
+    .apropos .info p{
+        display: none;
+    } 
+    .apropos .info {
+        position: relative;
+        width: 100%;
+        height: 200px;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+}
 
 /* ################################# */
 /* Nos Partenaires  */
@@ -559,7 +634,7 @@ body{
 .services{
     position: relative;
     width: 100%;
-    overflow: hidden;
+    box-sizing: border-box;
     margin-bottom: 100px;
 }
 .services .desc p {
@@ -634,6 +709,52 @@ body{
 } 
 /* responsive design*/
 
+@media screen and (max-width: 1000px) {   
+
+    .services .content {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    
+.services .content .col .info h3,
+.services .content .col .info a{
+    font-size: var(--text-descr1);
+}
+.services .content .col .info p{
+    font-size: var(--text-descr3);
+} 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+}
+@media screen and (max-width: 650px) {   
+
+    .services .content {
+        grid-template-columns: 1fr;
+
+    }
+    
+    .services .content .col{
+        margin: 10px auto;
+    } 
+    .services .desc p {
+        font-size: var(--text-descr1);
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+}
+@media screen and (max-width: 400px) {   
+    .services{
+        margin-bottom: 150px;
+    }
+    .services .desc{
+        display: none;
+    } 
+    .services .content {
+        top: 20px;
+    }
+    
+    .btn-position{
+        top: 50px;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+}
 
 /* ################################# */
 /* videos services  */
@@ -657,7 +778,7 @@ body{
     color: var(--color-white);
     font-size: var(--titre5);
     padding: 50px;
-    background: var(--color-info-dark);
+    background: var(--color-primary-variant);
     border-radius: 50%;
     position: relative;  
     margin-bottom: 70px;
@@ -672,7 +793,7 @@ body{
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    border: 15px solid orange;
+    border: 15px solid var(--color-background);
     animation: animate 1.5s linear infinite;
     opacity: 0;
 }
@@ -685,7 +806,7 @@ body{
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    border: 15px solid gray;
+    border: 15px solid var(--color-info-dark);
     animation: animated 1.5s linear infinite;
     opacity: 0;
     animation-delay: .6s;
@@ -738,6 +859,36 @@ body{
 
 /* responsive design*/
 
+@media screen and (max-width: 775px) {   
+
+    .videos-serv .video .info h1{
+        font-size: var(--titre4);
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+}
+@media screen and (max-width: 622px) {   
+
+    .videos-serv .video .info h1{
+        font-size: var(--titre6);
+    }
+    .videos-serv .video .info p{
+        font-size: var(--titre2);
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+}
+@media screen and (max-width: 545px) {   
+
+    .videos-serv .video .info h1{
+        font-size: var(--titre2);
+    }
+    .videos-serv .video .info p{
+        display: none;
+    }
+    .videos-serv .video .info{
+        line-height: 30px;
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+}
 
 /* ################################# */
 /* pourquoi nous choisir  */
@@ -822,9 +973,6 @@ body{
     border-bottom: solid 20px var(--color-primary-variant);
     box-shadow: var(--box-shadow1);
 }
-.choisir .content .choix .titre{
-    left: 0;
-}
 .choisir .content .choix .desc h3,
 .choisir .content .choix h3{
     position: relative;
@@ -893,13 +1041,13 @@ body{
     position: relative;
     max-width: 850px;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     overflow: hidden;
     margin-bottom: 30px;
     text-align: center;
-    padding: 0 10px;
+    padding: 5px 10px;
 }
 .realisation .content .col{
     position: relative;
@@ -945,6 +1093,14 @@ body{
 }
 /* responsive design*/
 
+
+@media screen and (max-width: 930px) {  
+    
+    .realisation .content .col {
+        margin-left: 10px;
+        margin: 20px auto;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+}
 
 /* ################################# */
 /* footer */
