@@ -4,161 +4,231 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1ss.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="#" alt="">
+    <!--pourquoi nous choisir-->    
+    <div class="choisir">
+        <div class="main">
+
+            <div class="content">
+
+                <div class="choix-img">
+
+                    <div class="img">
+                        <img src="img/img/Informatique2-gorodenkoff-iStock-750x536.jpg" alt="">
+                    </div>    
+
+                    <div class="client-sati">
+
+                        <div class="content">
+                            <div class="icon">
+                                <i class="fa-sharp fa-solid fa-trophy"></i>
+                            </div>
+                            <div class="info">
+                                <h4>534 +</h4>
+                                <p>Clients Satisfaits</p>
+                            </div>
+                        </div>
+                        <div class="triangle"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="choix">
+
+                    <div class="titre-left">
+                        <div class="content">
+                            <p>Pourquoi nous choisir</p>
+                        </div>
+                    </div>
+
+                    <div class="desc">
+                        <h3>Nous Fournissons Des Experts Pour Creer Une Grande Valeur Pour Votre Entreprise</h3>
+                    </div>
+
+                    <div class="contenue">
+
+                        <div class="col">
+                            <h3>Notre Qualite</h3>
+                            <div class="info">
+                                <div class="circle">1</div>
+                                <p>Notre priorite absolue est de fournir des services de la plus haute qualite.
+                                Nous vous garantissons de ne cesser que lorsque vous serez pleinement satisfait
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <h3>Notre Efficacite</h3>
+                            <div class="info">
+                                <div class="circle">2</div>
+                                <p>Nous sommes fiers de l’efficacité de nos méthodes et de nos solutions,
+                                    mais nous nous efforçons de nous améliorer pour fournir de toujours meilleurs résultats.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <h3>Des prix equitable</h3>
+                            <div class="info">
+                                <div class="circle">3</div>
+                                <p>Notre priorite absolue est de fournir des services de la plus haute qualite.
+                                Nous vous garantissons de ne cesser que lorsque vous serez pleinement satisfait
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--
+
+                
+
+.choisir{
+    position: relative;
+    width: 100%;
+    height: 670px;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+.choisir .content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    max-width: 1050px;
+    margin: auto;
+}
+.choisir .content .choix-img{
+    width: 100%;
+    overflow: hidden;
+}
+.choisir .content .choix-img .img{
+    position: relative;
+    max-width: 500px;
+    height: 470px;
+    overflow: hidden;
+    border-top: solid 20px var(--color-primary-variant);
+    top: 80px;
+}
+.choisir .choix-img .client-sati{
+    position: relative;
+    z-index: 1;
+    min-height: 120px;
+    max-width: 250px;
+    overflow: hidden;
+    top: -10%;
+    left: 5%;
+}
+.choisir .choix-img .client-sati .content{
+    z-index: 2;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    background-color: var(--color-white);
+    padding: 15px;
+    border-radius: var(--border-radius-2);
+}
+.choisir .choix-img .client-sati .content .icon{
+    font-size: var(--titre0);
+    color: var(--color-primary-variant);
+}
+.choisir .choix-img .client-sati .content .info{
+    margin-left: 8%;
+}
+.choisir .choix-img .client-sati .content .info h4{
+    font-size: var(--titre1);
+    margin-bottom: 8px;
+    color: var(--color-primary-variant);
+}
+.choisir .choix-img .client-sati .content .info p{
+    font-size: var(--text-descr2);
+    color: var(--color-dark);
+}
+.choisir .choix-img .client-sati .triangle{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent var(--color-white);
+    rotate: 90deg;
+    left: 30px;
+}
+
+.choisir .content .choix{
+    position: relative;
+    height: 640px;
+    max-width: 650px;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-bottom: solid 20px var(--color-primary-variant);
+    box-shadow: var(--box-shadow1);
+}
+.choisir .content .choix .desc h3,
+.choisir .content .choix h3{
+    position: relative;
+    font-size: var(--titre2);
+    color: var(--color-primary-variant);
+    font-weight: 700;
+}
+.choisir .content .choix .desc h3{
+    top: -20px;
+}
+.choisir .choix .contenue{
+    position: relative;
+    top: 30px;
+}
+.choisir .content .choix .contenue .col{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 0 10px 10px 0;
+    border-right: var(--color-dark) 1px solid;
+    border-bottom: var(--color-dark) 1px solid;
+    margin-bottom: 50px;
+}
+
+.choisir .content .choix .contenue .col h3{
+    top: -20px;
+    left: 55px;
+    font-weight: 800;
+    font-size: var(--titre2);
+}
+
+.choisir .choix .col .info{
+    width: 100%;
+    display: flex;
+}
+.choisir .choix .col .info .circle{
+    width: 80px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary-variant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--titre1);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-left: -10px;
+}
+
+.choisir .choix .col .info p{
+    margin-left: 30px;
+    font-size: var(--text-descr2);
+}
+
+            -->
+
         </div>
-        <div class="nav-links">
-            <ul>
-                <li class="active"><a href="#">Homme</a></li>
-                <li><a href="#">Apropos</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Realisations</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-        </div>
-        <div class="icon">
-            <ion-icon name="menu-outline" class="menuhamburger"></ion-icon>
-        </div>
-    </nav>
-
-    <header>
-    </header>
-    <style>
-
-    body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-</style>
-</head>
-<body>
-
-<h2>Animated Modal with Header and Footer</h2>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Modal Header</h2>
     </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
     <!--liens javascript-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

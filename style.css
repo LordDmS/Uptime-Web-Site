@@ -36,6 +36,7 @@
     --text-descr1:16px;
     --text-descr2:14px;
     --text-descr3:12px;
+    --text-descr4:10px;
 
     --titre0:50px;
     --titre1:24px;
@@ -893,10 +894,10 @@ body{
 /* ################################# */
 /* pourquoi nous choisir  */
 /* ################################# */  
+
 .choisir{
     position: relative;
     width: 100%;
-    height: 670px;
     overflow: hidden;
     margin-bottom: 80px;
 }
@@ -907,10 +908,19 @@ body{
     max-width: 1050px;
     margin: auto;
 }
+
 .choisir .content .choix-img{
     width: 100%;
-    overflow: hidden;
+    height: 500px;
+    background: url("img/img/Informatique2-gorodenkoff-iStock-750x536.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 350px;
+    border-top: solid 20px var(--color-primary-variant);
+    margin-top: 70px;
 }
+
 .choisir .content .choix-img .img{
     position: relative;
     max-width: 500px;
@@ -921,15 +931,12 @@ body{
 }
 .choisir .choix-img .client-sati{
     position: relative;
-    z-index: 1;
     min-height: 120px;
     max-width: 250px;
     overflow: hidden;
-    top: -10%;
     left: 5%;
 }
 .choisir .choix-img .client-sati .content{
-    z-index: 2;
     width: 100%;
     height: 90px;
     display: flex;
@@ -973,10 +980,9 @@ body{
     border-bottom: solid 20px var(--color-primary-variant);
     box-shadow: var(--box-shadow1);
 }
-.choisir .content .choix .desc h3,
-.choisir .content .choix h3{
+.choisir .content  h3{
     position: relative;
-    font-size: var(--titre2);
+    font-size: var(--titre3);
     color: var(--color-primary-variant);
     font-weight: 700;
 }
@@ -990,44 +996,60 @@ body{
 .choisir .content .choix .contenue .col{
     position: relative;
     width: 100%;
-    height: 100px;
-    padding: 0 10px 10px 0;
-    border-right: var(--color-dark) 1px solid;
-    border-bottom: var(--color-dark) 1px solid;
-    margin-bottom: 50px;
+    padding: 0 5px 20px 0;
+    box-shadow: var(--box-shadow1);
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap:10px;
 }
-
-.choisir .content .choix .contenue .col h3{
-    top: -20px;
-    left: 55px;
-    font-weight: 800;
-    font-size: var(--titre2);
-}
-
-.choisir .choix .col .info{
-    width: 100%;
+.choisir .choix .contenue .col .numero{
+    position: relative;
     display: flex;
-}
-.choisir .choix .col .info .circle{
-    width: 80px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--color-primary-variant);
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: var(--titre1);
-    font-weight: 700;
-    color: var(--color-white);
-    margin-left: -10px;
+    align-items: center;
+    top: 15px;
 }
 
-.choisir .choix .col .info p{
-    margin-left: 30px;
+.choisir .col .numero .circle{
+    padding: 8px 10px;
+    background-color: var(--color-primary-variant);
+    border-radius: 50%;
+    color: var(--color-white);
+}
+.choisir .col .info p{
+    margin-top: 10px;
+    color: var(--color-dark);
     font-size: var(--text-descr2);
 }
+
 /* responsive design*/
 
+
+
+@media screen and (max-width: 777px) {  
+    
+    
+.choisir .content{
+    grid-template-columns: 1fr;
+}
+
+.choisir .content .choix{
+    height:max-content;
+    margin: 20px auto;
+}
+
+}
+@media screen and (max-width: 430px) {  
+
+    .choisir .col .info p{
+        font-size: var(--text-descr4);
+    }
+    .choisir .content  h3{
+        font-size: var(--text-descr1);
+    }
+    
+}
 
 /* ################################# */
 /* Nos Realisations  */
@@ -1097,7 +1119,6 @@ body{
 @media screen and (max-width: 930px) {  
     
     .realisation .content .col {
-        margin-left: 10px;
         margin: 20px auto;
     }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 }
